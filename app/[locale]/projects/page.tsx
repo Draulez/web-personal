@@ -1,6 +1,8 @@
 "use client";
 import { useState } from 'react';
-import { Globe, Code, ExternalLink, Github } from 'lucide-react';
+import { Globe, Code, ExternalLink } from 'lucide-react';
+import { SiSpring, SiNextdotjs, SiVercel, SiReact } from "react-icons/si";
+import { BsAlexa } from "react-icons/bs";
 
 // Tipos
 interface Project {
@@ -12,7 +14,7 @@ interface Project {
   technologies: string[];
   liveUrl?: string;
   codeUrl?: string;
-  icon: string;
+  icon: React.ReactNode;
   iconColor: string;
 }
 
@@ -20,75 +22,63 @@ interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    title: 'E-commerce Dash',
-    category: 'Web App',
-    description: 'Un panel de control complejo con análisis en tiempo real para seguimiento de ventas y gestión de inventario. Incluye modo oscuro y widgets personalizables.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
-    technologies: ['Java', 'Firebase', 'Tailwind'],
-    liveUrl: 'https://example.com/demo',
-    codeUrl: 'https://github.com/example',
-    icon: '📊',
-    iconColor: 'bg-purple-500'
-  },
-  {
-    id: '2',
-    title: 'Task Manager API',
-    category: 'Backend',
-    description: 'Servicio backend robusto para manejo de tareas asíncronas. Arquitectura escalable diseñada para manejar alta concurrencia de usuarios.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop',
-    technologies: ['Python', 'Django', 'PostgreSQL'],
-    codeUrl: 'https://github.com/example',
-    icon: '⚙️',
-    iconColor: 'bg-orange-500'
-  },
-  {
-    id: '3',
-    title: 'Weather iOS',
-    category: 'Mobile',
-    description: 'Aplicación nativa de clima con animaciones fluidas y notificaciones push. Enfocada en la experiencia de usuario y diseño minimalista.',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=400&fit=crop',
-    technologies: ['Swift', 'SwiftUI'],
-    liveUrl: 'https://apps.apple.com/example',
-    icon: '☁️',
-    iconColor: 'bg-blue-500'
-  },
-  {
-    id: '4',
-    title: 'Social Network',
-    category: 'Web App',
-    description: 'Red social completa con sistema de mensajería en tiempo real, publicaciones multimedia y sistema de seguidores.',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    liveUrl: 'https://example.com/social',
-    codeUrl: 'https://github.com/example',
-    icon: '💬',
-    iconColor: 'bg-pink-500'
-  },
-  {
-    id: '5',
-    title: 'Fitness Tracker',
-    category: 'Mobile',
-    description: 'App móvil para seguimiento de entrenamientos con gráficas de progreso y planes personalizados.',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=400&fit=crop',
-    technologies: ['React Native', 'Firebase'],
-    liveUrl: 'https://play.google.com/example',
-    icon: '💪',
+    title: 'Microservicios',
+    category: 'Backend Arquitecture',
+    description: 'Microservicios para la gestión de usuarios, pedidos y productos. Autenticación y autorización.',
+    image: 'https://github.com/Draulez/microservices',
+    technologies: ['Java', 'SpringBoot', 'RestController', 'JPA', 'PostgreSQL', 'MariaDB', 'MongoDB', 'Maven', 'Docker', 'Kubernetes'],
+    codeUrl: 'https://github.com/Draulez/microservices',
+    icon: <SiSpring className="w-7 h-7" />,
     iconColor: 'bg-green-500'
   },
   {
-    id: '6',
-    title: 'Payment Gateway',
-    category: 'Backend',
-    description: 'Sistema de procesamiento de pagos seguro con integración de múltiples proveedores y prevención de fraude.',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop',
-    technologies: ['Node.js', 'Stripe', 'Redis'],
-    codeUrl: 'https://github.com/example',
-    icon: '💳',
-    iconColor: 'bg-emerald-500'
-  }
+    id: '2',
+    title: 'Web Mindware Solutions',
+    category: 'Frontend Developer',
+    description: 'Desarrollo de la web corporativa de Mindware Solutions',
+    image: 'https://mindwaresolutions.com',
+    technologies: ['Next.js', 'React', 'Tailwind', 'TypeScript', 'i18n'],
+    liveUrl: 'https://mindwaresolutions.com',
+    icon: <SiNextdotjs className="w-7 h-7" />,
+    iconColor: 'bg-blue-500'
+  },
+  {
+    id: '3',
+    title: 'Web Pizzería Simple',
+    category: 'Frontend Developer',
+    description: 'Desarrollo de la web de una pizzería simple',
+    image: 'https://pizzeriadelangel.com',
+    technologies: ['Next.js', 'React', 'Tailwind', 'Vercel'],
+    liveUrl: 'https://pizzeriadelangel.com',
+    icon: <SiVercel className="w-7 h-7" />,
+    iconColor: 'bg-black'
+  },
+  {
+    id: '4',
+    title: 'Web Personal',
+    category: 'Frontend Developer',
+    description: 'Desarrollo de la web personal de un desarrollador de software',
+    image: 'https://david-hernandez-portfolio.vercel.app/',
+    technologies: ['Next.js', 'React', 'Tailwind', 'Vercel'],
+    liveUrl: 'https://david-hernandez-portfolio.vercel.app/',
+    icon: <BsAlexa className="w-7 h-7" />,
+    iconColor: 'bg-blue-500'
+  },
+  {
+    id: '5',
+    title: 'Skill Alexa',
+    category: 'Backend Developer',
+    description: 'Desarrollo de la skill Alexa como trábajo de final de carrera',
+    image: 'https://skill-alexa.com',
+    technologies: ['Node.js', 'AWS', 'Lambda', 'Alexa Skills Kit', 'DynamoDB', 'CloudWatch', 'API Gateway'],
+    codeUrl: 'https://github.com/Draulez/CapacitaTe',
+    icon: <BsAlexa className="w-7 h-7" />,
+    iconColor: 'bg-blue-500'
+  },
+
 ];
 
-const categories = ['All', 'Java', 'React'];
+const categories = ['All', 'Java', 'React', 'Node.js'];
 
 // Componente de proyecto individual
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -101,7 +91,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="text-xl font-semibold text-(--color-text-primary) mb-1">{project.title}</h3>
-          <p className="text-sm text-green-400 uppercase tracking-wide">{project.category}</p>
+          <p className="text-sm text-green-400 text-bold uppercase tracking-wide">{project.category}</p>
         </div>
         <button className="text-gray-400 hover:text-white transition-colors p-2">
           <ExternalLink className="w-5 h-5" />

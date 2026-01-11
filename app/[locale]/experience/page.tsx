@@ -12,10 +12,11 @@ const ExperienceTimeline = () => {
       posicion: "Java Backend J2EE Developer",
       ubicacion: "Sagunto, Valencia, España",
       detalles: [
-        "Diseño y mantenimiento de tablas de hechos y dimensiones para modelado de datos eficiente en analytics y reporting",
-        "Liderando soluciones de data engineering para optimizar sistemas y pipelines cloud en equipo colaborativo",
-        "Implementación de arquitecturas escalables usando Azure Databricks para transformación e integración de datos",
-        "Mejora de workflows operacionales y fiabilidad de datos mediante uso extensivo de pipelines CI/CD y automatización"
+        "Desarrollo de nuevas funcionalidades en aplicaciones web para plataformas internas, utilizando Java J2EE y bases de datos relacionales (MariaDB).",
+        "Coordinación estrecha con el equipo de QA para validar casos de uso y requisitos técnicos",
+        "Participación activa en revisiones de diseño de software, proponiendo mejoras en la arquitectura y eficiencia del código.",
+        "Implementación de la nueva web corporativa en React",
+        "Optimización de procesos de CI/CD con Jenkins, integrando mejoras continuas en entornos locales."
       ],
       herramientas: ["Java 21","Java 1.8", "SQL", "AWS", "Automatización", "Python", "CI/CD", "Jenkins", "Docker", "Frontend"]
     },
@@ -25,13 +26,8 @@ const ExperienceTimeline = () => {
       fechaFinal: "Jun 2021",
       posicion: "Student",
       ubicacion: "Valencia, España",
-      detalles: [
-        "Contribución a plataforma de data science a gran escala, aportando expertise técnico y mentorizando al equipo",
-        "Implementación de pipelines CI/CD y diseño de soluciones para procesamiento y transformación de datos eficiente",
-        "Transición a rol de Data Engineering, enfocándome en diseñar sistemas escalables para manejar terabytes de datos",
-        "Trabajo en proyectos innovadores combinando metodologías de machine learning y data engineering"
-      ],
-      herramientas: ["Python", "PySpark", "Azure", "Databricks", "Scikit-Learn", "Docker"]
+      detalles: [],
+      herramientas: []
     }
   ]);
 

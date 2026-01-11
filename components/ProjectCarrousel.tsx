@@ -19,7 +19,7 @@ interface CarouselProps {
 const ProjectSlide = ({ image, title, tools }: SlideProps) => (
   <div className="min-w-80 h-70 mt-34 bg-white/10 rounded-lg shadow-md p-4 mx-2 flex flex-col">
     <img src={image} alt={title} className="w-full h-36 object-cover rounded-lg mb-2" />
-    <h3 className="font-bold text-lg my-3 text-left text-(--color-text-primary)">{title}</h3>
+    <h3 className="font-bold text-base my-3 text-left text-(--color-text-primary)">{title}</h3>
     <div className="flex flex-wrap gap-3">
       {tools.map((tool, i) => (
         <span key={i} className="text-xs bg-white/20 border-2 px-2 py-1 rounded">{tool}</span>

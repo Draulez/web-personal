@@ -3,7 +3,7 @@ import { getHomeContent } from "@/lib/i18n/getHomeContent";
 import { asset } from "@/lib/assets";
 import { MdEmail } from "react-icons/md";
 import { ProjectCarousel } from "@/components/ProjectCarrousel";
-import { FaGithub, FaArrowRight, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaArrowRight, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
 type Props = {
@@ -24,8 +24,8 @@ const slideProps: SlideProps[] = [
   },
   {
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop",
-    title: "Proyecto Web",
-    tools: ["Next.js", "React", "Vercel"]
+    title: "Web Mindware Solutions",
+    tools: ["Next.js", "React", "Tailwind"]
   },
   {
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
@@ -35,14 +35,18 @@ const slideProps: SlideProps[] = [
   {
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
     title: "Skill Alexa",
-    tools: ["Next.js", "Stripe", "PostgreSQL"]
+    tools: ["Node.js", "AWS", "Lambda"]
   },
   {
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-    title: "Analytics",
-    tools: ["Python", "Pandas", "Plotly"]
+    title: "Web Personal Portfolio",
+    tools: ["Next.js", "React", "Tailwind"]
   },
 ];
+
+const handleAction = (href: string) => {
+  window.open(href, "_blank");
+};
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
@@ -85,22 +89,37 @@ export default async function Home({ params }: Props) {
       </div>
 
       <div className="flex md:flex-row items-center justify-center w-full h-12 bg-accent">
-        <button className="w-10/12 mr-3 md:w-64 md:px-10 py-2 bg-(--color-accent-hover) text-black rounded-4xl hover:bg-gray-200 transition cursor-pointer">
-          Download CV
-        </button>
-        <MdEmail className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
+        <Link href="/cv/CV - David Broseta.pdf" target="_blank" rel="noopener noreferrer">
+          <button className="w-10/12 mr-3 md:w-64 md:px-10 py-2 bg-(--color-accent-hover) text-black rounded-4xl hover:bg-gray-200 transition cursor-pointer">
+            Download CV
+          </button>
+        </Link>
+        <Link href="mailto:dbrobro@hotmail.com" target="_blank" rel="noopener noreferrer">
+          <MdEmail className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
+        </Link>
       </div>
 
       <div className="flex gap-8 justify-center">
-        <div className="flex flex-col items-center">
-          <FaGithub className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
-          <p className="text-xs text-(--color-text-secondary)"> GitHub</p>
-        </div>
+        <Link href="https://github.com/draulez" target="_blank" rel="noopener noreferrer">
+          <div className="flex flex-col items-center">
+            <FaGithub className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
+            <p className="text-xs text-(--color-text-secondary)"> GitHub</p>
+          </div>
+        </Link>
 
-        <div className="flex flex-col items-center">
-          <FaLinkedin className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
-          <p className="text-xs text-(--color-text-secondary)"> LinkedIn</p>
-        </div>
+        <Link href="https://www.linkedin.com/in/david-broseta/" target="_blank" rel="noopener noreferrer">
+          <div className="flex flex-col items-center">
+            <FaLinkedin className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
+            <p className="text-xs text-(--color-text-secondary)"> LinkedIn</p>
+          </div>
+        </Link>
+
+        <Link href="https://wa.me/34601014162" target="_blank" rel="noopener noreferrer">
+          <div className="flex flex-col items-center" >
+            <FaWhatsapp className="inline-block mb-2 p-3 bg-gray-500/25 rounded-4xl transition-transform duration-400 hover:scale-110 hover:cursor-pointer text-5xl" />
+            <p className="text-xs text-(--color-text-secondary)"> Whatsapp </p>
+          </div>
+        </Link>
       </div>
 
 

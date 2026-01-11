@@ -5,7 +5,11 @@ import { VscTerminalCmd } from "react-icons/vsc";
 import { MdArrowOutward } from "react-icons/md";
 import ThemeToggle from "./ThemeToggle";
 
-export default function Header() {
+interface Params {
+  content: any;
+}
+
+export default function Header({ content }: Params) {
   const locale = useLocale();
 
   return (
