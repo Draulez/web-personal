@@ -18,27 +18,27 @@ interface SlideProps {
 
 const slideProps: SlideProps[] = [
   {
-    image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
     title: "Microservicios",
     tools: ["Spring Boot", "Java 21"]
   },
   {
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
     title: "Web Mindware Solutions",
     tools: ["Next.js", "React", "Tailwind"]
   },
   {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=600&fit=crop",
     title: "Web Pizzería Simple",
     tools: ["Next.js", "React", "Vercel"]
   },
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop",
     title: "Skill Alexa",
     tools: ["Node.js", "AWS", "Lambda"]
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
     title: "Web Personal Portfolio",
     tools: ["Next.js", "React", "Tailwind"]
   },

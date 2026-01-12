@@ -10,7 +10,7 @@ type Props = {
 const projectsData = [
   {
     id: '1',
-    image: 'https://github.com/Draulez/microservices',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
     technologies: ['Java', 'SpringBoot', 'RestController', 'JPA', 'PostgreSQL', 'MariaDB', 'MongoDB', 'Maven', 'Docker', 'Kubernetes'],
     codeUrl: 'https://github.com/Draulez/microservices',
     iconType: 'spring' as const,
@@ -18,7 +18,7 @@ const projectsData = [
   },
   {
     id: '2',
-    image: 'https://mindwaresolutions.com',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     technologies: ['Next.js', 'React', 'Tailwind', 'TypeScript', 'i18n'],
     liveUrl: 'https://mindwaresolutions.com',
     codeUrl: 'https://github.com/Draulez/web-personal',
@@ -27,7 +27,7 @@ const projectsData = [
   },
   {
     id: '3',
-    image: 'https://pizzeriadelangel.com',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=600&fit=crop',
     technologies: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     liveUrl: 'https://pizzeriadelangel.com',
     iconType: 'vercel' as const,
@@ -35,7 +35,7 @@ const projectsData = [
   },
   {
     id: '4',
-    image: 'https://david-hernandez-portfolio.vercel.app/',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
     technologies: ['Next.js', 'React', 'Tailwind', 'Vercel'],
     liveUrl: 'https://david-hernandez-portfolio.vercel.app/',
     iconType: 'alexa' as const,
@@ -43,7 +43,7 @@ const projectsData = [
   },
   {
     id: '5',
-    image: 'https://skill-alexa.com',
+    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop',
     technologies: ['Node.js', 'AWS', 'Lambda', 'Alexa Skills Kit', 'DynamoDB', 'CloudWatch', 'API Gateway'],
     codeUrl: 'https://github.com/Draulez/CapacitaTe',
     iconType: 'alexa' as const,
