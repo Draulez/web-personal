@@ -3,8 +3,9 @@ export const homeContent = {
         title: "Hola, soy ",
         subtitle:
             "Desarrollador de software enfocado en backend, arquitectura limpia y soluciones mantenibles.",
-        projectTitle: "Proyectos Destacados",
-        projectAll: "Ver todo",
+        downloadCV: "Descargar CV",
+        projectTitle: "Mis Proyectos",
+        projectAll: "Ver todos",
     },
     about: {
         title: "Sobre mí",

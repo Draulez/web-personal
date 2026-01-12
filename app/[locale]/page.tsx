@@ -7,7 +7,7 @@ import { FaGithub, FaArrowRight, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
 type Props = {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 };
 
 interface SlideProps {
@@ -43,10 +43,6 @@ const slideProps: SlideProps[] = [
     tools: ["Next.js", "React", "Tailwind"]
   },
 ];
-
-const handleAction = (href: string) => {
-  window.open(href, "_blank");
-};
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
@@ -91,7 +87,7 @@ export default async function Home({ params }: Props) {
       <div className="flex md:flex-row items-center justify-center w-full h-12 bg-accent">
         <Link href="/cv/CV - David Broseta.pdf" target="_blank" rel="noopener noreferrer">
           <button className="w-10/12 mr-3 md:w-64 md:px-10 py-2 bg-(--color-accent-hover) text-black rounded-4xl hover:bg-gray-200 transition cursor-pointer">
-            Download CV
+            {content.hero.downloadCV}
           </button>
         </Link>
         <Link href="mailto:dbrobro@hotmail.com" target="_blank" rel="noopener noreferrer">
@@ -127,9 +123,9 @@ export default async function Home({ params }: Props) {
       <div className="w-full py-8">
         <div className="max-w-7xl mx-auto px-4">
           <div className="block gap-60 align-middle">
-            <h2 className="text-3xl text-left font-bold ">Mis Proyectos</h2>
+            <h2 className="text-3xl text-left font-bold ">{content.hero.projectTitle}</h2>
             <Link href="/projects">
-              <h3 className="flex gap-1 justify-end mb-4 text-right text-(--color-accent-hover) font-bold">Ver todos <FaArrowRight className="mt-2 text-xs text-(--color-accent-hover)" /></h3>
+              <h3 className="flex gap-1 justify-end mb-4 text-right text-(--color-accent-hover) font-bold">{content.hero.projectAll} <FaArrowRight className="mt-2 text-xs text-(--color-accent-hover)" /></h3>
             </Link>
           </div>
           <ProjectCarousel slides={slideProps} />
