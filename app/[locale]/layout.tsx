@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../../app/globals.css";
 import { LocaleProvider } from "@/components/LocaleProvider";
-import { Locale } from "@/lib/i18n/locale";
+import { Locale, locales, defaultLocale } from "@/lib/i18n/locale";
 import { getHeaderContent } from "@/lib/i18n/getHeaderContent";
 import { getFooterContent } from "@/lib/i18n/getFooterContent";
 
@@ -13,11 +13,14 @@ export const metadata = {
 
 export default async function RootLayout({
   children, params
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
-}>) {
-  const { locale } = await params;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: localeParam } = await params;
+  // Validar y asegurar que el locale es válido
+  const locale = (locales.includes(localeParam as Locale) ? localeParam : defaultLocale) as Locale;
+  
   const [headerContent, footerContent] = await Promise.all([
     getHeaderContent(locale),
     getFooterContent(locale),
