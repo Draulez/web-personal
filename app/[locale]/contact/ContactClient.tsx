@@ -60,7 +60,7 @@ export default function ContactClient({ content, contactItems }: ContactClientPr
         </div>
 
         {/* Contact Table */}
-        <div className="bg-(--color-background-slideProject)/50 rounded-3xl border border-gray-700/50 overflow-hidden shadow-xl">
+        <div className="hidden md:block bg-(--color-background-slideProject)/50 rounded-3xl border border-gray-700/50 overflow-hidden shadow-xl">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

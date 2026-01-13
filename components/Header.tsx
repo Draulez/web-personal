@@ -39,7 +39,7 @@ export default function Header({ content }: HeaderProps) {
           </Link>
         </div>
 
-        <nav className="flex gap-6 text-sm text-(--color-text-secondary)">
+        <nav className="flex hidden gap-6 text-sm text-(--color-text-secondary)">
           <Link href={`/${locale}/projects`} className="transition-discrete duration-200 hover:font-semibold hover:scale-110">
             {content.nav.projects}
           </Link>

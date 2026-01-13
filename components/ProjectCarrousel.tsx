@@ -17,10 +17,10 @@ interface CarouselProps {
 
 // Componente de slide individual
 const ProjectSlide = ({ image, title, tools }: SlideProps) => (
-  <div className="min-w-80 h-70 mt-34 bg-white/10 rounded-lg shadow-md p-4 mx-2 flex flex-col">
+  <div className="flex-shrink-0 w-72 sm:w-80 h-64 bg-white/10 rounded-lg shadow-md p-4 mx-2 flex flex-col">
     <img src={image} alt={title} className="w-full h-36 object-cover rounded-lg mb-2" />
-    <h3 className="font-bold text-base my-3 text-left text-(--color-text-primary)">{title}</h3>
-    <div className="flex flex-wrap gap-3">
+    <h3 className="font-bold text-base my-3 text-left">{title}</h3>
+    <div className="flex flex-wrap gap-2">
       {tools.map((tool, i) => (
         <span key={i} className="text-xs bg-white/20 border-2 px-2 py-1 rounded">{tool}</span>
       ))}
@@ -42,7 +42,8 @@ export const ProjectCarousel = ({ slides, className = '' }: CarouselProps) => {
     const animate = (): void => {
       setScrollPosition(prev => {
         const newPosition = prev + speed;
-        const slideWidth = 336; // 320px + 16px margin
+        // Ancho responsivo: 288px (móvil) o 320px (desktop) + 16px margin
+        const slideWidth = window.innerWidth < 640 ? 304 : 336;
         const totalWidth = slides.length * slideWidth;
         
         if (newPosition >= totalWidth) {
@@ -63,12 +64,10 @@ export const ProjectCarousel = ({ slides, className = '' }: CarouselProps) => {
   }, [speed, slides.length]);
 
   const handleLeftClick = (): void => {
-    // Ir al slide anterior
-    const slideWidth = 336;
+    const slideWidth = window.innerWidth < 640 ? 304 : 336;
     const currentSlide = Math.floor(scrollPosition / slideWidth);
     const totalSlides = slides.length;
     
-    // Calcular el slide anterior (con wrap around)
     const previousSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
     setScrollPosition(previousSlide * slideWidth);
   };
@@ -79,18 +78,9 @@ export const ProjectCarousel = ({ slides, className = '' }: CarouselProps) => {
   };
 
   return (
-    <div className={`w-full h-32 bg-accent relative ${className}`}>
-      {/* Botón izquierdo */}
-      {/* <button
-        onClick={handleLeftClick}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
-        aria-label="Desplazar izquierda"
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button> */}
-
-      {/* Contenedor del carrusel */}
-      <div className=" h-full" ref={containerRef}>
+    <div className={`w-full relative ${className}`}>
+      {/* Contenedor del carrusel con overflow-hidden */}
+      <div className="overflow-hidden h-72" ref={containerRef}>
         <div 
           className="flex h-full items-center"
           style={{
@@ -108,15 +98,43 @@ export const ProjectCarousel = ({ slides, className = '' }: CarouselProps) => {
           ))}
         </div>
       </div>
-
-      {/* Botón derecho */}
-      {/* <button
-        onClick={handleRightClick}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
-        aria-label="Desplazar derecha"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button> */}
     </div>
   );
 };
+
+// Ejemplo de uso con datos de muestra
+export default function App() {
+  const projectSlides = [
+    {
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+      title: "Proyecto Web Moderno",
+      tools: ["React", "TypeScript", "Tailwind"]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      title: "Dashboard Analytics",
+      tools: ["Next.js", "Chart.js", "API"]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
+      title: "App Mobile",
+      tools: ["React Native", "Firebase"]
+    },
+    {
+      image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop",
+      title: "E-commerce Platform",
+      tools: ["Vue", "Node.js", "MongoDB"]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white p-4">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-8 mt-8">
+          Mis Proyectos
+        </h1>
+        <ProjectCarousel slides={projectSlides} />
+      </div>
+    </div>
+  );
+}
