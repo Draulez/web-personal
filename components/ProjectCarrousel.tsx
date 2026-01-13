@@ -82,10 +82,9 @@ export const ProjectCarousel = ({ slides, className = '' }: CarouselProps) => {
       {/* Contenedor del carrusel con overflow-hidden */}
       <div className="overflow-hidden h-72" ref={containerRef}>
         <div 
-          className="flex h-full items-center"
+          className="flex h-full will-change-transform items-center"
           style={{
-            transform: `translateX(-${scrollPosition}px)`,
-            transition: 'transform 0.05s linear'
+            transform: `translate3d(-${scrollPosition}px, 0, 0)`,
           }}
         >
           {duplicatedSlides.map((slide, index) => (
