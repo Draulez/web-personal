@@ -84,9 +84,9 @@ export default async function Home({ params }: Props) {
         </p>
       </div>
 
-      <div className="flex-row  items-center justify-center w-full h-12 bg-accent">
+      <div className="flex items-center gap-5 justify-center w-full h-12 bg-accent">
         <Link href="/cv/CV - David Broseta.pdf" target="_blank" rel="noopener noreferrer">
-          <button className="w-10/12 mr-3 md:w-64 md:px-10 py-2 bg-(--color-accent-hover) text-black rounded-4xl hover:bg-gray-200 transition cursor-pointer">
+          <button className=" w-full px-9 mr-3 md:w-64 md:px-10 py-2 bg-(--color-accent-hover) text-black rounded-4xl hover:bg-gray-200 transition cursor-pointer">
             {content.hero.downloadCV}
           </button>
         </Link>
